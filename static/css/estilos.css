@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background: linear-gradient(#eee,#777);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#toogle {
+    display: none;
+}
+
+#boton{
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    line-height: 200px;
+    text-align: center;
+    font-size: 100px;
+    border-radius: 50%;
+    color: #777;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+#toggle:checked + #boton {
+    background: #eee;
+    box-shadow: inset 0 12px  35px rgba(0,0,0,0.5);
+    color: rgba(0,255,0,0.7);
+}
+
+.box select{
+    background: #0563af;
+}

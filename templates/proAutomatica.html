@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://kit.fontawesome.com/7bc77cd3b8.js" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Programacion Automatica - Terrazas y Jardines</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+	
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/bootstrap.css')}}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/magnific-popup.css')}} ">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/fontello.css') }}">    
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+   
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    
+             
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/metodo.js')}}"></script>
+        
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	 <style>
+		 .boxx{
+			 position: absolute;
+			 
+			 left: 53%;
+			 transform: translate(-50%,-50%);
+		 }
+		 .boxx select{
+			background: #0563af;
+			color:#fff;
+			padding:5px;
+			width:300px;
+			height:40px;
+			border: none;
+			box-shadow: 0 5px 25px rgba(0,0,0,.5);
+			-webkit-appearance: button;
+			outline: none;
+		}
+		 .boxx:before {
+				content: '\f0ab';
+				font-family: "Font Awesome 5 Free";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 40px;
+				text-aling: center;
+				line-height: 50px;
+				color: #fff;
+				fonr-size:60px;
+				background: #007ce0;
+				pointer-events:none;
+				
+		}
+		.boxx:hover:before{
+			background: #0472ca;
+		}	
+			
+     </style>
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div id="fh5co-logo"><a href="index.html">Terrazas y jardines<span>.</span></a></div>
+				</div>
+				<div class="col-xs-12 text-center menu-1">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+                        <li ><a href="controlDisp.html">Control de Dispositivos</a></li>
+						<li class="active"><a href="proAutomatica.html">Programación Automática</a></li>
+						<li><a href="historial.html">Historial y Estadísticas</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+        
+
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
+							
+							<div class ="container">
+								<h2>Programe sus propios horarios de riego o control de lamparas</h2>
+							
+							<div class="form-group">
+							<form name ="programacionAuto" action="/proAutomatica.html" method ="post">
+								<label>Ingresar Fecha de activacion de Lampara 1</label>
+								<input type="date" name="fechaActivacion" min="2019-11-01" max="2020-05-30" style="color:#000"/>
+								<input type="time" name="horaActivacion" style="color:#000"/>
+								<br/><br/>
+								<h4 style="color:white;">Seleccione una opcion de riego/activacion</h4></br><br/>
+								<div class="boxx">
+									<select name="opcion">
+										<option>Seleccione Opcion</option>
+										<option value="1">Una sola Vez</option>
+										<option value="7">Una Semana desde la fecha</option>
+									</select>
+								</div>
+								<br/><br/>
+								<h4 style="color:white;">Seleccione por cuantos segundos desea activar el dispositivo</h4><br/><br/>
+								<div class="boxx">
+									<select name="opcionSegundos">
+										<option>Segundos de Activacion</option>
+										<option value="1">1</option>
+										<option value="3">3</option>
+										<option value="5">5</option>
+										<option value="10">10</option>
+									</select>
+								</div>
+							<br><br>
+							
+								<div class="luces">
+								<input type="submit" class="col-xs-6 btn-lg btn-primary " value="Crear Programacion Automatica" margin-left: 15px>
+								</div>
+							</form>
+							</div>
+							</div>
+							
+							,<!--<h1>{{listtemp}}</h1>
+							<h1>{{F_FINAL}}</h1>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-services">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-8 col-md-offset-2 text-center animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-heading">
+						
+						<h3 style="color:white;" align="center">Actividades</h3>
+						<p style="color:white;"  align="center">Acceda a la informacion de las actividades programadas automaticas en el sistema y controle las mismas.</p>
+						<table class="table table-striped table-bordered table m" align="center">
+							<thead>
+								<tr>
+									<th>ID	</th>
+									<th>Sensor	</th>
+									<th>Fecha de Activacion	</th>
+									<th>Estado	</th>
+									<th>Tiempo de Riego(s)	</th>
+									<th>Operacion	</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for dato in datos%}
+							<tr>
+								<td>{{ dato.0 }}</td>
+								<td>{{ dato.1 }}</td>
+								<td>{{ dato.2 }}</td>
+								<td>{{ dato.3 }}</td>
+								<td>{{ dato.4 }}</td>
+								<td>
+									<a href=/proAutomatica.html/delete/{{dato.0}}>Eliminar </a>
+								</td>
+							</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-xs-12 text-center menu-1">
+
+					<ul class="fh5co-footer-links">
+						<li><a style="color:white;" href="about.html">Acerca de</a></li>
+						<li><a style="color:white;"href="help.html">Ayuda</a></li>
+						<li><a style="color:white;"href="contact.html">Contacto</a></li>
+					</ul>
+				</div>
+
+
+				
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2019 Terrazas y Jardines. All Rights Reserved.</small> 
+						<small class="block">Designed by: Christian Salinas & Jefferson Arias. </small>
+					</p>
+
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+   
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{ url_for('static', filename='js/jquery.countTo.js')}}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/magnific-popup-options.js')}}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>
+

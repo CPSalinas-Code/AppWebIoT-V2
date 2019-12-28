@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shape &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+	
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/bootstrap.css')}}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/magnific-popup.css')}} ">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/fontello.css') }}">    
+    
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/jquery-ui.min.css') }}">    
+    
+   
+        
+	
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+    
+    <script src="{{ url_for('static', filename='js/metodo.js')}}"></script>
+    
+    <script src="{{ url_for('static', filename='js/jquery-ui.min.js')}}"></script>
+    
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+
+    
+    
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<!--<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>-->
+    
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script src="{{ url_for('static', filename='js/static_Chart.min.js')}}"></script>
+	
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div id="fh5co-logo"><a href="index.html">Terrazas y jardines<span>.</span></a></div>
+				</div>
+				<div class="col-xs-12 text-center menu-1">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+                        <li ><a href="controlDisp.html">Control de Dispositivos</a></li>
+						<li ><a href="proAutomatica.html">Programación Automática</a></li>
+						<li class="active"><a href="historial.html">Historial y Estadísticas</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	
+    
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
+							<br><br><br><br><br><br><br><br>
+							<div class ="container">
+								<h2>Generar graficos de linea, con datos almacenados respecto a la Temperatura del suelo</h2>
+							
+							<div class="form-group">
+							<form name ="fechas" action="/historial.html" method ="post">
+								<label>Ingresar Fecha Inicio</label>
+								<input type="date" name="fechaINICIAL" min="2019-11-01" max="2020-05-30" style="color:#000"/>
+								<input type="time" name="horaINICIAL" style="color:#000"/>
+							<br><br>
+							
+								<label>Ingresar Fecha Final</label>
+								<input type="date" name="fechaFINAL" min="2019-11-01" max="2020-05-30" style="color:#000"/>
+								<input type="time" name="horaFINAL" style="color:#000"/>
+							<br><br>
+								<div class="luces">
+								<input type="submit" class="col-xs-6 btn-lg btn-primary " value="Generar Grafica" margin-left: 15px>
+								</div>
+							</form>
+							</div>
+							</div>
+							<br>
+							<div class = "container"> 
+								<canvas id="myChart" width="600" height="400"></canvas>
+							</div>
+							,<!--<h1>{{listtemp}}</h1>
+							<h1>{{F_FINAL}}</h1>-->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<script>
+      // Global parameters:
+      // do not resize the chart canvas when its container does (keep at 600x400px)
+      Chart.defaults.global.responsive = false;
+
+      // define the chart data
+      var chartData = {
+        labels : [{% for item in labels %}
+                   "{{item}}",
+                  {% endfor %}],
+        datasets : [{
+            label: '{{ legend }}',
+            fill: true,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data : [{% for item in values %}
+                      {{item}},
+                    {% endfor %}],
+            spanGaps: false
+        }]
+      }
+
+      // get chart canvas
+      var ctx = document.getElementById("myChart").getContext("2d");
+
+      // create the chart using the chart canvas
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+      });
+    </script>
+
+	
+	
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-xs-12 text-center menu-1">
+
+					<ul class="fh5co-footer-links">
+						<li><a style="color:white;" href="about.html">Acerca de</a></li>
+						<li><a style="color:white;" href="help.html">Ayuda</a></li>
+						<li><a style="color:white;" href="contact.html">Contacto</a></li>
+					</ul>
+				</div>
+
+
+				
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2019 Terrazas y Jardines. All Rights Reserved.</small> 
+						<small class="block">Designed by: Christian Salinas & Jefferson Arias. </small>
+					</p>
+
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery --->
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{ url_for('static', filename='js/jquery.countTo.js')}}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/magnific-popup-options.js')}}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+	<script>
+		$("#fechaINICIO").datepicker();
+	</script>
+
+	</body>
+</html>
+

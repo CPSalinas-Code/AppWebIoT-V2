@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shape &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+	
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/bootstrap.css')}}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/magnific-popup.css')}} ">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/fontello.css') }}">  
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">  
+   
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+             
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/metodo.js')}}"></script>
+        
+    <script>
+        function encender_Lamp1(){
+                document.f1.toggleLamp1.checked=1
+        }
+        function apagar_Lamp1(){
+                document.f1.toggleLamp1.checked=0
+        }
+	function encender_Lamp2(){
+                document.f2.toggleLamp2.checked=1
+        }
+        function apagar_Lamp2(){
+                document.f2.toggleLamp2.checked=0
+        }
+	function encender_Lamp3(){
+                document.f3.toggleLamp3.checked=1
+        }
+        function apagar_Lamp3(){
+                document.f3.toggleLamp3.checked=0
+        }
+    </script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+        
+    <div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div id="fh5co-logo"><a href="index.html">Terrazas y jardines<span>.</span></a></div>
+				</div>
+				<div class="col-xs-12 text-center menu-1">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+                        <li class="active"><a href="controlDisp.html">Control de Dispositivos</a></li>
+						<li><a href="proAutomatica.html">Programación Automática</a></li>
+						<li><a href="historial.html">Historial y Estadísticas</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+        
+	<header id="fh5co-header" class="fh6co-cover" role="banner" style="background-image:url(/static/images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		
+	</header>
+	
+	<div id="fh5co-started">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <br><br><br>
+                           <h1 style="color:bisque;font-size:50px;">Iluminación</h1>
+                            <div class ="contenedor">
+                                 
+				 
+				 
+				<form name="f1" action="/Lamp1" method="POST" role="form">
+					
+					<div class="container">
+					  <div class="row">
+					    <div class="col-xs-12 col-md-3">
+					      
+							  <div class="form-group">
+							  <button id="btn1" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:encender_Lamp1()">Encender</button>
+							
+							  <button id="btn2" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:apagar_Lamp1()" >Apagar</button>
+						  </div>
+						  </div>
+						   
+					</div>
+                                <br>
+                                <input type="checkbox" id="toggleLamp1" >
+                                <label for="toggleLamp1" class="icon-lightbulb" id="botonLamp1"></label>
+                                <div class="luces">
+                                    <img src="static/images/luz.png" alt="" id="luz1">
+                                </div>
+                                
+				</form>
+                                                
+                                <form name="f2" action="/Lamp1" method="POST" role="form">
+				<div class="container">
+					<h1 style="color:white;font-size:35px;">Lámpara 2</h1>
+					<div class="row">
+						<div class="col-xs-12 col-md-3">
+							<div class="form-group">
+								<button id="btn3" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:encender_Lamp2()">Encender</button>
+							
+								<button id="btn4" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:apagar_Lamp2()" >Apagar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+                                <input type="checkbox" id="toggleLamp2">
+                                <label for="toggleLamp2" class="icon-lightbulb" id="botonLamp2"></label>
+                                <div class="luces">
+                                    <img src="static/images/luz.png" alt="" id="luz2">
+                                </div>
+				</form>
+				
+				
+				<form name="f3" action="/Lamp1" method="POST" role="form">
+				<div class="container">
+					<h1 style="color:white;font-size:35px;">Lámpara 3</h1>
+					<div class="row">
+						<div class="col-xs-12 col-md-3">
+							<div class="form-group">
+								<button id="btn5" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:encender_Lamp3()">Encender</button>
+							
+								<button id="btn6" class="col-xs-6 btn-lg btn-primary " type="button" value="Encender / Apagar" onclick="javascript:apagar_Lamp3()">Apagar</button>
+							</div>
+						</div>
+					</div>
+				</div>	
+                                <input type="checkbox" id="toggleLamp3">
+                                <label for="toggleLamp3" class="icon-lightbulb" id="botonLamp3"></label> <div class="luces">
+                                    <img src="static/images/luz.png" alt="" id="luz3">
+                                </div>
+				</form>
+                               
+                            </div><br><br>
+                            <h1 style="color:bisque;font-size:50px;">Riego</h1>
+                            <div class ="contenedor">
+                                <br><h1 style="color:white;font-size:35px;">Riego 1</h1>
+                                <input type="checkbox" id="toggleAgua1">
+                                <label for="toggleAgua1" class="icon-water" id="botonAgua1"></label><br>
+                                <br><h1 style="color:white;font-size:35px;">Riego 2</h1>
+                                <input type="checkbox" id="toggleAgua2">
+                                <label for="toggleAgua2" class="icon-water" id="botonAgua2"></label><br>
+                                <br><h1 style="color:white;font-size:35px;">Riego 3</h1>
+                                <input type="checkbox" id="toggleAgua3">
+                                <label for="toggleAgua3" class="icon-water" id="botonAgua3"></label><br>
+                            </div>
+                                
+                            <h1 style="color:bisque;font-size:50px;">Falta</h1>
+                            <div class ="contenedor">
+                                <br><h1 style="color:white;font-size:35px;">X 1</h1>
+                                <input type="checkbox" id="toggleAgua1">
+                                <label for="toggleAgua1" class="icon-water" id="botonAgua1"></label><br>
+                                <br><h1 style="color:white;font-size:35px;">X 2</h1>
+                                <input type="checkbox" id="toggleAgua2">
+                                <label for="toggleAgua2" class="icon-water" id="botonAgua2"></label><br>
+                                <br><h1 style="color:white;font-size:35px;">X 3</h1>
+                                <input type="checkbox" id="toggleAgua3">
+                                <label for="toggleAgua3" class="icon-water" id="botonAgua3"></label><br>
+                            </div>
+                            
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row ro-pb-md">
+				<div class="col-xs-12 text-center menu-1">
+
+					<ul class="fh5co-footer-links">
+						<li><a style="color:white;" href="about.html">Acerca de</a></li>
+						<li><a style="color:white;" href="help.html">Ayuda</a></li>
+						<li><a style="color:white;" href="contact.html">Contacto</a></li>
+					</ul>
+				</div>
+
+
+				
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<a class="block">&copy; 2019 Terrazas y Jardines. All Rights Reserved.</a> 
+						<a class="block">Designed by: Christian Salinas & Jefferson Arias. </a>
+					</p>
+
+				</div>
+			</div>
+                
+		</div>
+	</footer>
+	
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+   
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{ url_for('static', filename='js/jquery.countTo.js')}}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/magnific-popup-options.js')}}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	</body>
+</html>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="water" unicode="&#xe800;" d="M168 844q10-86 50-155t73-123 33-112q0-66-48-113t-114-47-114 47-48 113q0 58 33 112t73 123 50 155q2 4 7 4t5-4z m616 0q10-86 50-155t73-123 33-112q0-66-48-113t-114-47-114 47-48 113q0 48 21 93t48 78 53 92 34 127q2 4 7 4t5-4z m-320-444q2 4 7 4t5-4q10-86 50-155t73-123 33-112q0-66-48-113t-114-47-114 47-48 113q0 58 33 112t73 123 50 155z" horiz-adv-x="940" />
+
+<glyph glyph-name="lightbulb" unicode="&#xe801;" d="M390 663q64 0 109-45t46-110q0-11-7-18t-19-8-19 8-7 18q0 43-30 73t-73 30q-25 0-25 26t25 26z m0-860q-21 0-36 16t-15 37l-104 0q-21 0-37 15t-15 37l0 157q0 31-23 76t-90 142q-70 97-70 224 0 161 114 276t276 114 276-114 115-276q0-121-71-224-67-96-89-140t-22-78l0-157q0-21-15-37t-36-15l-105 0q0-22-16-37t-37-16z m105 156l0 53-209 0 0-53 209 0z m130 383q53 76 53 165 0 118-85 202t-203 84q-117 0-202-84t-84-202q0-87 52-164 107-155 124-227l59 0 0 105q0 21 15 36t36 15 37-15 16-36l0-105 57 0q16 71 125 226z" horiz-adv-x="781" />
+</font>
+</defs>
+</svg>
