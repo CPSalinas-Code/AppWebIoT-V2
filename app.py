@@ -21,6 +21,7 @@ fechaFINAL = ""
 temp, fecha = [],[]
 Ltemperatura, Lfecha=[],[]
 listaDatos = []
+listaDatos_PB = []
 listaDatosFecha = []
 conn = pymysql.connect(host="localhost",user="admin",passwd="",db="BD1")
 listaFechasActividades=[]
@@ -29,9 +30,11 @@ status, statusL = [],[]
 idd=[]
 
 mqtt_topic = "esp8266prueba"
+mqtt_topic_PB = "plantabaja/nodemcu"
 mqtt_broker_ip ="192.168.0.118"
 
 client = mqtt.Client()
+client_PB = mqtt.Client("PlantaBaja")
 
 def consulta(fecha_I, fecha_F, hora_I, hora_F):
     try:
@@ -250,41 +253,83 @@ def actualizarActividades():
     #print(str(listaFechasActividadesF))
     #print(status)
         
-def myfunction(client, userdata,flags, rc):
-    print ("Connected!", str(rc))
+def myfunction_P1(client, userdata,flags, rc):
+    print ("Conectado a NodeMCU Planta Primera", str(rc))
     client.subscribe(mqtt_topic)
-    time.sleep(1.1)
+    #time.sleep(1.1)
+
+def myfunction_PB(client,userdata,flags,rc):
+    print ("Coneectado a NodeMCU Planta Baja", str(rc))
+    client.subscribe(mqtt_topic_PB)
+    #time.sleep(1.1)
     
-def on_message(client, userdata, msg):
-    listaDatos = (str(msg.payload))[2:].split(",")
-    listaDatos[2]=listaDatos[2].rstrip("'")
-    listaDatosFecha = listaDatos[2].split(" ")
-    mysql_insert_query = ""
-    mysql_insert_query = "INSERT INTO Sensor1 (NombreSensor,temperatura,humedad,fecha,hora,fechaHora) VALUES ('Sensor1',"+listaDatos[1]+","+listaDatos[0]+","+"\'"+listaDatosFecha[0]+"\'"+","+"\'"+listaDatosFecha[1]+"\'"+","+"\'"+listaDatos[2]+"\'"+");"
+def on_message_P1(client, userdata, msg):
+    #print("MENSAJE TOPIC: ")
+    #print (msg.topic)
+    print("______")
+    if (msg.topic == "esp8266prueba"):
+        listaDatos = (str(msg.payload))[2:].split(",")
+        listaDatos[2]=listaDatos[2].rstrip("'")
+        listaDatosFecha = listaDatos[2].split(" ")
+        mysql_insert_query = ""
+        mysql_insert_query = "INSERT INTO Sensor1 (NombreSensor,temperatura,humedad,fecha,hora,fechaHora) VALUES ('Sensor1',"+listaDatos[1]+","+listaDatos[0]+","+"\'"+listaDatosFecha[0]+"\'"+","+"\'"+listaDatosFecha[1]+"\'"+","+"\'"+listaDatos[2]+"\'"+");"
+        mysql_insert_query_maceta1 = "INSERT INTO Maceta1 (nombreSensor,humedadSuelo,fechaHora_Maceta1) VALUES ('primeraplanta/maceta1',"+listaDatos[3][0 : -1]+","+"\'"+listaDatos[2]+"\'"+");"
+        try:
+            #conn = pymysql.connect(host="localhost",user="admin",passwd="",db="BD1")
+            cursor= conn.cursor();
+            #print (mysql_insert_query)
+            cursor.execute(mysql_insert_query)
+            print ("Insertado con Exito en Tabla Sensor1")
+            cursor.close()
+            #time.sleep(2)
+            conn.commit();
+            #print(mysql_insert_query_maceta1)
+            cursor= conn.cursor();
+            cursor.execute(mysql_insert_query_maceta1)
+            print ("Insertado con Exito en Tabla Maceta1")
+            cursor.close()
+            #time.sleep(2)
+            conn.commit();
+        except Error as e:
+            print ('Error: ',e)
+    
+    
+
+def on_message_PB(client, userdata, msg):
+    listaDatos_PB = (str(msg.payload))[2:].split(",")
+    mysql_insert_sensor2_PB = ""
+    mysql_insert_sensor2_PB = "INSERT INTO Sensor2 (nombreSensor, humedad_s2, temperatura_s2, fechaHora_s2) VALUES ('plantabaja/sensor2',"+listaDatos_PB[0]+","+listaDatos_PB[1]+","+"\'"+listaDatos_PB[2]+");"
     try:
-        #conn = pymysql.connect(host="localhost",user="admin",passwd="",db="BD1")
-        cursor= conn.cursor();
-        print (mysql_insert_query)
-        cursor.execute(mysql_insert_query)
+        print(mysql_insert_sensor2_PB)
+        cursor=conn.cursor()
+        cursor.execute(mysql_insert_sensor2_PB)
         cursor.close()
-        time.sleep(2)
-        conn.commit();
-        print ("Insertado con Exito")
+        #time.sleep(2)
+        conn.commit()
+        print("Insertado correctamente en tabla Sensor 2")
     except Error as e:
-        print ('Error: ',e)
+        print('Error: ',e)
+
+
 
 if __name__ == "__main__":
-    client.on_connect = myfunction
-    client.on_message = on_message
+    client.on_connect = myfunction_P1
+    client.on_message = on_message_P1
     t1 = threading.Thread(name="Hilo_tiempo",target=consultar)
     t1.start()
     t2 = threading.Thread(name="Hilo_fechas_act",target=actualizarActividades)
-    t2.start()    
+    t2.start()
     client.connect(mqtt_broker_ip,1883)
     t3 = threading.Thread(name="Hilo_fechass_act",target=client.loop_start())
     t3.start()
     time.sleep(5)
-    t4 = threading.Thread(name="Hilso_fechass_act",target=app.run(host = '0.0.0.0',port=5380))
+    client_PB.on_connect = myfunction_PB
+    client_PB.on_message = on_message_PB
+    client_PB.connect(mqtt_broker_ip,1883)
+    t5 = threading.Thread(name="Hilo planta baja",target=client_PB.loop_start())
+    t5.start()
+    time.sleep(5)
+    t4 = threading.Thread(name="Hilso_fechass_act",target=app.run(host = '0.0.0.0',port=5000))
     t4.start()
     client.disconnect()
     client.loop_stop()
